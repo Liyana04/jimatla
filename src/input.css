@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+}
+
+@layer components {
+  .floating-image {
+    @apply transition-all duration-300 ease;
+  }
+
+  .floating-image:hover {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  button {
+    @apply font-semibold transition-all duration-200;
+  }
+
+  button:active {
+    @apply scale-95;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
